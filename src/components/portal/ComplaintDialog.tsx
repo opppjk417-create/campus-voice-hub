@@ -28,7 +28,7 @@ export type NewComplaint = {
   urgency: string;
   description: string;
   anonymous: boolean;
-  fileName?: string;
+  fileName?: string | undefined;
 };
 
 const urgencies = ["Low", "Medium", "High", "Critical"];
@@ -41,7 +41,7 @@ export function ComplaintDialog({
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
-  presetCategory?: string;
+  presetCategory?: string | undefined;
   onSubmit: (c: NewComplaint) => void;
 }) {
   const [subject, setSubject] = useState("");
